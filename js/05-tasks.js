@@ -102,8 +102,8 @@ const salariesValues = Object.values(salaries);
 
 console.log(salariesValues);
 
-for (const mcalkdafjalks of salariesValues) {
-  sum += mcalkdafjalks;
+for (const value of salariesValues) {
+  sum += value;
 }
 
 console.log(sum);
