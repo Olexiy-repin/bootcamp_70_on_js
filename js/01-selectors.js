@@ -5,6 +5,22 @@
  * - За ID
  */
 
+// const btnEl = document.getElementById('magic-btn');
+
+// console.dir(btnEl);
+
+// const btnEl = document.querySelector('body .js-magic-btn');
+
+// console.dir(btnEl);
+
+// const navLinksEl = document.querySelectorAll('.js-site-nav-link');
+
+// console.log(navLinksEl);
+
 /*
  * Властивості «навігації» по DOM-вузлах
  */
+
+// const navListEl = document.querySelector('.js-site-nav');
+
+// console.log(navListEl.parentNode);

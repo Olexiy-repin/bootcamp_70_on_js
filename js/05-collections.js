@@ -42,16 +42,41 @@ const pictures = [
 </li>
 */
 
-// const galleryListEl = document.querySelector('.js-gallery');
-
-//? Функція для створення карточки makeGalleryCard(cardInfo)
-const makeGalleryCard = pictureInfo => {
+//? Функція для створення карточки createGalleryCard(cardInfo)
+const createGalleryCard = pictureInfo => {
   // Створення li
+  const galleryItemEl = document.createElement('li');
+
+  galleryItemEl.classList.add('gallery-item');
+
   // Створення a
+  const galleryLinkEl = document.createElement('a');
+
+  galleryLinkEl.href = '#';
+
+  galleryItemEl.prepend(galleryLinkEl);
+
   // Створення img
+  const galleryImgEl = document.createElement('img');
+
+  galleryImgEl.src = pictureInfo.url;
+  galleryImgEl.alt = pictureInfo.alt;
+  galleryImgEl.width = pictureInfo.width;
+  galleryImgEl.height = pictureInfo.height;
+
+  galleryLinkEl.prepend(galleryImgEl);
+
+  return galleryItemEl;
 };
 
 //? Перебір масиву pictures
-// const galleryCardsArr = null;
+const galleryCardsArr = pictures.map(picture => {
+  return createGalleryCard(picture);
+});
+
+console.log(galleryCardsArr);
 
 //? Вставка колекції карток на сторінку
+const galleryListEl = document.querySelector('.js-gallery');
+
+galleryListEl.append(...galleryCardsArr);
